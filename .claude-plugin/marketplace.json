@@ -1,0 +1,14 @@
+{
+  "name": "omrilotan",
+  "owner": {
+    "name": "omrilotan",
+    "url": "https://github.com/omrilotan"
+  },
+  "plugins": [
+    {
+      "name": "production-expectations",
+      "source": "./",
+      "description": "Software that monitors and repairs itself, under expectations a person sets."
+    }
+  ]
+}

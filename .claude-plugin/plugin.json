@@ -1,0 +1,13 @@
+{
+  "name": "production-expectations",
+  "description": "Software that monitors and repairs itself, under expectations a person sets.",
+  "version": "0.1.0",
+  "author": {
+    "name": "omrilotan",
+    "url": "https://github.com/omrilotan"
+  },
+  "homepage": "https://github.com/omrilotan/production-expectations",
+  "repository": "https://github.com/omrilotan/production-expectations",
+  "license": "Unlicense",
+  "keywords": ["skill", "monitoring", "repair", "expectations", "production"]
+}
