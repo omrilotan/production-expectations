@@ -42,6 +42,8 @@ If the project already has checks, monitors or runbooks, add to them in their sh
 
 **"Not done" is a statement, not a stop.** When the project cannot give you one of the six (nothing runs on a schedule, a failure reaches nobody), do what the request asks, release if it says to, and make the first line of your report "Not done: " and the gap. Write `alerts: "none yet"` and who has to set it up. Never name an agent or a route that does not exist, and do not wire up a route that wakes someone unless you were asked to: propose it.
 
+A route that exists and reaches nobody is a gap too: an address that goes to no inbox, a channel nobody reads. Row 5 is not done. The gap goes in the first line even when the report mentions it further down.
+
 Proposed values and `approved_by: "none"` do not make a change "not done". List them as open decisions.
 
 **With no traffic since the release**, the two values in row 6 show only that the runner works. Rehearse the path on a copy of production as well, and say which of the two you did. A rehearsal never writes to production's run log.

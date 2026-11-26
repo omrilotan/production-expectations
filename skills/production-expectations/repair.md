@@ -14,9 +14,9 @@ Read when an alert or a failing check arrives. The expectation that alerted you 
    - Ask first: release new code, change production data, anything that cannot be undone.
 5. **Repair what is already wrong.** A revert restores the code, not the rows the fault wrote. The expectation keeps failing until those are repaired. That repair is a change to production data: follow the bounds. Prepare it as a script that lists by default and writes only when told to.
 6. **Fix forward** with a test that fails without the fix. Release it only if the bounds allow, with a release id, from a commit. A fix inherits the expectation that caught it and needs no flag of its own.
-7. **Check again**, and name how it ended (below).
+7. **Check again**, and name how it ended (below), in the record and in your report.
 8. **Leave the record** (below).
-9. **If no expectation caught the fault**, add one with the fix.
+9. **If no expectation caught the fault**, add one with the fix. A new unhandled error or a missed run counts as no expectation. When the fix changes nothing the software promises, write "no expectation: behaviour unchanged" in the record instead.
 
 Gaps you inherit (no scheduler, a runner with no run log, events with no release id) go in the record for the owner. You do not rebuild them during an incident.
 
@@ -51,7 +51,7 @@ Bounds are the project's dial. Its owner widens them in the expectation as repai
 
 ## The record, and bringing a person in
 
-One file per incident: where the project's notes for agents say, or `incidents/<date>-<expectation>.md`, dated by the clock the expectation runner uses. Commit it on the main branch. Prepared code, the fix and the repair script, goes on a branch, never in the tree the release tool ships. The command you give the person may run it from that branch. Build branches and copies of production in a temporary directory. The file is both the record for the next agent and the view for the person. In this order:
+One file per incident: where the project's notes for agents say, or `incidents/<date>-<expectation>.md`, dated by the clock the expectation runner uses. Commit it on the main branch. If the project's git ignores the place its notes name for records, write the file there, say in your report that it is not committed, and propose to the owner that it be tracked. Prepared code, the fix and the repair script, goes on a branch, never in the tree the release tool ships. The command you give the person may run it from that branch. Build branches and copies of production in a temporary directory. The file is both the record for the next agent and the view for the person. In this order:
 
 1. **The decisions needed**, in the order they should be applied: each as one question, its options, what each costs, and the exact command for the option you recommend. Describe the others. Mark the decision that clears the expectation.
 2. **What failed**, in the words of `means`, how many are affected, and how it ended.

@@ -59,6 +59,8 @@ A change that alters what is wanted (preorders ship on the release date, not at 
 
 ## Scheduled work
 
+A deadline has to be one the runner can see pass. A check that runs once a day, in the same run as the job it watches, cannot fail a deadline one hour after that run: the next run comes after the catch-up. Run the check more often, or set the deadline in terms of runs ("sent by the end of the Monday run").
+
 An outcome expectation with a grace period catches a job that has stopped. Add a record that the job ran, and an expectation on it, only when nothing else would notice. Whether the runner itself is alive has to be checked from outside it.
 
 ## The runner
